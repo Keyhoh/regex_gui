@@ -1,0 +1,44 @@
+{
+  "Operators": [
+    {
+      "operator": "BEGIN",
+      "enclosure": {
+        "opener": "^",
+        "closure": ""
+      },
+      "separator": null
+    },
+    {
+      "operator": "END",
+      "enclosure": {
+        "opener": "",
+        "closure": "$"
+      },
+      "separator": null
+    },
+    {
+      "operator": "AND",
+      "enclosure": {
+        "opener": "",
+        "closure": ""
+      },
+      "separator": ""
+    },
+    {
+      "operator": "OR",
+      "enclosure": {
+        "opener": "[",
+        "closure": "]"
+      },
+      "separator": "|"
+    },
+    {
+      "operator": "NOR",
+      "enclosure": {
+        "opener": "[^",
+        "closure": "]"
+      },
+      "separator": null
+    }
+  ]
+}
