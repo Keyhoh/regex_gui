@@ -1,20 +1,20 @@
-import {OperatorImpl} from "../OperatorImpl";
 // @ts-ignore
 import json = require("../../resources/Operators.json");
-import {Operator} from "../Operator";
+import {Operator} from "../app/Operator";
+import {OperatorImpl} from "../app/impl/OperatorImpl";
 
 export class OperatorCache {
-    operators: Map<string, OperatorImpl>;
+    public static operators: Map<string, OperatorImpl>;
 
-    constructor() {
+    public static initialize(){
         let operators = new Map<string, OperatorImpl>();
         json.Operators.forEach((value) => {
             operators.set(value.operator, new OperatorImpl(<Operator> value));
         });
-        this.setOperators(operators);
+        OperatorCache.setOperators(operators);
     }
 
-    setOperators(operators: Map<string, OperatorImpl>): void {
-        this.operators = new Map(operators);
+    private static setOperators(operators: Map<string, OperatorImpl>): void {
+        OperatorCache.operators = new Map(operators);
     }
 }

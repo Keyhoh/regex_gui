@@ -1,0 +1,14 @@
+{
+  "grouping": [
+    {
+      "kind": "capturing",
+      "opener": "(",
+      "closure": ")"
+    },
+    {
+      "kind": "non-capturing",
+      "opener": "(?:",
+      "closure": ")"
+    }
+  ]
+}
