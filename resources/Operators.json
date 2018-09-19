@@ -1,44 +1,84 @@
 {
   "Operators": [
     {
-      "operator": "BEGIN",
-      "enclosure": {
-        "opener": "^",
-        "closure": ""
-      },
-      "separator": null
+      "kind": "BEGIN",
+      "grouping": {
+        "enclosure": {
+          "opener": "^",
+          "closure": ""
+        },
+        "separator": null
+      }
     },
     {
-      "operator": "END",
-      "enclosure": {
-        "opener": "",
-        "closure": "$"
-      },
-      "separator": null
+      "kind": "END",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": "$"
+        },
+        "separator": null
+      }
     },
     {
-      "operator": "AND",
-      "enclosure": {
-        "opener": "",
-        "closure": ""
-      },
-      "separator": ""
+      "kind": "AND",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": ""
+        },
+        "separator": ""
+      }
     },
     {
-      "operator": "OR",
-      "enclosure": {
-        "opener": "[",
-        "closure": "]"
-      },
-      "separator": "|"
+      "kind": "OR",
+      "grouping": {
+        "enclosure": {
+          "opener": "[",
+          "closure": "]"
+        },
+        "separator": "|"
+      }
     },
     {
-      "operator": "NOR",
-      "enclosure": {
-        "opener": "[^",
-        "closure": "]"
-      },
-      "separator": null
+      "kind": "NOR",
+      "grouping": {
+        "enclosure": {
+          "opener": "[^",
+          "closure": "]"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "CAPTURE",
+      "grouping": {
+        "enclosure": {
+          "opener": "(",
+          "closure": ")"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "NON-CAPTURE",
+      "grouping": {
+        "enclosure": {
+          "opener": "(?:",
+          "closure": ")"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "TIMES",
+      "grouping": {
+        "enclosure": {
+          "opener": "{",
+          "closure": "}"
+        },
+        "separator": ","
+      }
     }
   ]
 }

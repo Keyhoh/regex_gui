@@ -1,12 +1,13 @@
-import {EnclosureImpl} from "./impl/EnclosureImpl";
+import {Grouping} from "./Grouping";
 
 export interface Operator {
 
-    readonly operator: string;
-    readonly enclosure: EnclosureImpl;
-    readonly separator: string;
+    readonly kind: string;
+    readonly grouping: Grouping;
 
     enclose(text: string): string;
 
-    combine(array: Array<string>, isPrime: boolean): string;
+    combine(array: Array<string>): string;
+
+    unite(array:Array<string>):string;
 }

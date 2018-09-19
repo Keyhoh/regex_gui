@@ -1,27 +1,25 @@
-import {EnclosureImpl} from "./EnclosureImpl";
 import {Operator} from "../Operator";
+import {GroupingImpl} from "./GroupingImpl";
 
 export class OperatorImpl implements Operator {
 
-    readonly operator: string;
-    readonly enclosure: EnclosureImpl;
-    readonly separator: string;
+    readonly kind: string;
+    readonly grouping: GroupingImpl;
 
     constructor(operator: Operator) {
-        this.operator = operator.operator;
-        this.enclosure = new EnclosureImpl(operator.enclosure);
-        this.separator = operator.separator;
+        this.kind = operator.kind;
+        this.grouping = new GroupingImpl(operator.grouping);
     }
 
     enclose(text: string): string {
-        return this.enclosure.enclose(text);
+        return this.grouping.enclose(text);
     }
 
-    combine(array: Array<string>, isPrime: boolean): string {
-        if (isPrime) {
-            return array.join(this.separator);
-        } else {
-            return `(${array.join(this.separator)})`;
-        }
+    combine(array: Array<string>): string {
+        return this.grouping.combine(array);
+    }
+
+    unite(array: Array<string>): string {
+        return this.enclose(this.combine(array));
     }
 }

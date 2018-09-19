@@ -9,6 +9,16 @@
       "kind": "non-capturing",
       "opener": "(?:",
       "closure": ")"
+    },
+    {
+      "kind": "range",
+      "opener": "[",
+      "closure": "]"
+    },
+    {
+      "kind": "out-range",
+      "opener": "[^",
+      "closure": "]"
     }
   ]
 }

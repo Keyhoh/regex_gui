@@ -7,16 +7,15 @@ export class GroupingImpl implements Grouping {
     readonly separator: SeparatorImpl;
 
     constructor(grouping: Grouping) {
-        this.enclosure = grouping.enclosure;
-        this.separator = grouping.separator;
+        this.enclosure = new EnclosureImpl(grouping.enclosure);
+        this.separator = new SeparatorImpl(grouping.separator);
     }
 
     enclose(text: string): string {
         return this.enclosure.enclose(text);
     }
 
-    separate(array: Array<string>): string {
-        return this.separator.separate(array);
+    combine(array: Array<string>): string {
+        return this.separator.combine(array);
     }
-
 }

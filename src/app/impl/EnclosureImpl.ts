@@ -4,7 +4,7 @@ export class EnclosureImpl implements Enclosure {
     readonly opener: string;
     readonly closure: string;
 
-    constructor(enclosure: EnclosureImpl) {
+    constructor(enclosure: Enclosure) {
         this.opener = enclosure.opener;
         this.closure = enclosure.closure;
     }

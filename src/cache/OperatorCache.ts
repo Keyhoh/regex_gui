@@ -9,7 +9,7 @@ export class OperatorCache {
     public static initialize(){
         let operators = new Map<string, OperatorImpl>();
         json.Operators.forEach((value) => {
-            operators.set(value.operator, new OperatorImpl(<Operator> value));
+            operators.set(value.kind, new OperatorImpl(<Operator> value));
         });
         OperatorCache.setOperators(operators);
     }

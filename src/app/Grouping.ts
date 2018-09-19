@@ -7,5 +7,5 @@ export interface Grouping {
 
     enclose(text: string): string;
 
-    separate(array: Array<string>): string;
+    combine(array: Array<string>): string;
 }
