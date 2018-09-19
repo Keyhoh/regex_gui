@@ -1,14 +1,13 @@
 import {Grouping} from "../Grouping";
 import {EnclosureImpl} from "./EnclosureImpl";
-import {SeparatorImpl} from "./SeparatorImpl";
 
 export class GroupingImpl implements Grouping {
     readonly enclosure: EnclosureImpl;
-    readonly separator: SeparatorImpl;
+    readonly separator: string;
 
     constructor(grouping: Grouping) {
         this.enclosure = new EnclosureImpl(grouping.enclosure);
-        this.separator = new SeparatorImpl(grouping.separator);
+        this.separator = grouping.separator;
     }
 
     enclose(text: string): string {
@@ -16,6 +15,6 @@ export class GroupingImpl implements Grouping {
     }
 
     combine(array: Array<string>): string {
-        return this.separator.combine(array);
+        return array.join(this.separator);
     }
 }
