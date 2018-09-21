@@ -1,0 +1,84 @@
+{
+  "Operators": [
+    {
+      "kind": "BEGIN",
+      "grouping": {
+        "enclosure": {
+          "opener": "^",
+          "closure": ""
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "END",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": "$"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "AND",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": ""
+        },
+        "separator": ""
+      }
+    },
+    {
+      "kind": "OR",
+      "grouping": {
+        "enclosure": {
+          "opener": "[",
+          "closure": "]"
+        },
+        "separator": "|"
+      }
+    },
+    {
+      "kind": "NOR",
+      "grouping": {
+        "enclosure": {
+          "opener": "[^",
+          "closure": "]"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "CAPTURE",
+      "grouping": {
+        "enclosure": {
+          "opener": "(",
+          "closure": ")"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "NON-CAPTURE",
+      "grouping": {
+        "enclosure": {
+          "opener": "(?:",
+          "closure": ")"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "TIMES",
+      "grouping": {
+        "enclosure": {
+          "opener": "{",
+          "closure": "}"
+        },
+        "separator": ","
+      }
+    }
+  ]
+}

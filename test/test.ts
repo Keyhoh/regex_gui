@@ -1,5 +1,5 @@
-import {RegexUnit} from "../src/app/RegexUnit";
-import {OperatorCache} from "../src/cache/OperatorCache";
+import {RegexUnit} from "../src/ts/app/RegexUnit";
+import {OperatorCache} from "../src/ts/cache/OperatorCache";
 
 let unit1 = new RegexUnit();
 let unit2 = new RegexUnit();
