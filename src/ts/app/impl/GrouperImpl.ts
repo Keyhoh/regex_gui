@@ -1,12 +1,12 @@
-import {Operator} from "../Operator";
+import {Grouper} from "../Grouper";
 import {GroupingImpl} from "./GroupingImpl";
 
-export class OperatorImpl implements Operator {
+export class GrouperImpl implements Grouper {
 
     readonly kind: string;
     readonly grouping: GroupingImpl;
 
-    constructor(operator: Operator) {
+    constructor(operator: Grouper) {
         this.kind = operator.kind;
         this.grouping = new GroupingImpl(operator.grouping);
     }

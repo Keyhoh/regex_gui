@@ -1,5 +1,5 @@
 {
-  "Operators": [
+  "Groupers": [
     {
       "kind": "BEGIN",
       "grouping": {
@@ -68,16 +68,6 @@
           "closure": ")"
         },
         "separator": null
-      }
-    },
-    {
-      "kind": "TIMES",
-      "grouping": {
-        "enclosure": {
-          "opener": "{",
-          "closure": "}"
-        },
-        "separator": ","
       }
     }
   ]

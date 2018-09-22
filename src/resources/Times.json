@@ -1,0 +1,54 @@
+{
+  "Groupers": [
+    {
+      "kind": "TIMES",
+      "grouping": {
+        "enclosure": {
+          "opener": "{",
+          "closure": "}"
+        },
+        "separator": ","
+      }
+    },
+    {
+      "kind": "MORE",
+      "grouping": {
+        "enclosure": {
+          "opener": "{",
+          "closure": ",}"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "ZERO-OR-MORE",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": "*"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "ONE-OR-MORE",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": "+"
+        },
+        "separator": null
+      }
+    },
+    {
+      "kind": "ZERO-OR-ONE",
+      "grouping": {
+        "enclosure": {
+          "opener": "",
+          "closure": "?"
+        },
+        "separator": null
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import {Grouping} from "./Grouping";
 
-export interface Operator {
+export interface Grouper {
 
     readonly kind: string;
     readonly grouping: Grouping;

@@ -1,8 +1,8 @@
-import {OperatorImpl} from "./impl/OperatorImpl";
+import {GrouperImpl} from "./impl/GrouperImpl";
 import {OperatorCache} from "../cache/OperatorCache";
 
 export class RegexUnit {
-    private operator: OperatorImpl;
+    private operator: GrouperImpl;
     private characters: string;
     private regexUnits: Array<RegexUnit> = [];
 
@@ -11,7 +11,7 @@ export class RegexUnit {
         this.operator = OperatorCache.operators.get("AND");
     }
 
-    setOperator(operator: OperatorImpl) {
+    setOperator(operator: GrouperImpl) {
         this.operator = operator;
     }
 
