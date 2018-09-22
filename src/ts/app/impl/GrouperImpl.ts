@@ -20,6 +20,6 @@ export class GrouperImpl implements Grouper {
     }
 
     unite(array: Array<string>): string {
-        return this.enclose(this.combine(array));
+        return this.grouping.unite(array);
     }
 }

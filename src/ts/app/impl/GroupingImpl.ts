@@ -17,4 +17,8 @@ export class GroupingImpl implements Grouping {
     combine(array: Array<string>): string {
         return array.join(this.separator);
     }
+
+    unite(array: Array<string>): string {
+        return this.enclose(this.combine(array));
+    }
 }
