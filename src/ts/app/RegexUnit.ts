@@ -8,7 +8,6 @@ export class RegexUnit {
 
     constructor() {
         OperatorCache.initialize();
-        this.operator = OperatorCache.operators.get("AND");
     }
 
     setOperator(operator: GrouperImpl) {

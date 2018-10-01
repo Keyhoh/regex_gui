@@ -6,12 +6,12 @@ let unit2 = new RegexUnit();
 let unit21 = new RegexUnit();
 let unit22 = new RegexUnit();
 
-unit1.setOperator(OperatorCache.operators.get("AND"));
+unit1.setOperator(OperatorCache.groupers.get("OR"));
 unit1.setCharacters("unit1");
-unit2.setOperator(OperatorCache.operators.get("OR"));
-unit21.setOperator(OperatorCache.operators.get("NOR"));
+unit2.setOperator(OperatorCache.groupers.get("OR"));
+unit21.setOperator(OperatorCache.groupers.get("NOR"));
 unit21.setCharacters("unit21");
-unit22.setOperator(OperatorCache.operators.get("OR"));
+unit22.setOperator(OperatorCache.groupers.get("OR"));
 unit22.setCharacters("unit22");
 
 unit2.setRegexUnits([unit21,unit22]);
