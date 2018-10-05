@@ -4,10 +4,7 @@
     "target": "ESNext",
     "sourceMap": true,
     "jsx": "react",
-    "rootDirs": [
-      "src",
-      "typing"
-    ]
+    "noImplicitUseStrict": true
   },
   "exclude": [
     "node_modules"
