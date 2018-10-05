@@ -1,7 +1,6 @@
 import {Grouping} from "./Grouping";
 
 export interface Grouper {
-
     readonly kind: string;
     readonly grouping: Grouping;
 
@@ -9,5 +8,5 @@ export interface Grouper {
 
     combine(array: Array<string>): string;
 
-    unite(array:Array<string>):string;
+    unite(array: Array<string>): string;
 }

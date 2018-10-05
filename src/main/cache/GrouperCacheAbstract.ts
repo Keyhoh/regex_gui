@@ -1,5 +1,5 @@
-import {GrouperImpl} from "../app/impl/GrouperImpl";
-import {Grouper} from "../app/Grouper";
+import {GrouperImpl} from "../regexunit/impl/GrouperImpl";
+import {Grouper} from "../regexunit/Grouper";
 
 export abstract class GrouperCacheAbstract {
     static groupers: Map<string, GrouperImpl>;

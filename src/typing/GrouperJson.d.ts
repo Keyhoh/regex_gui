@@ -1,6 +1,6 @@
-import {Grouper} from "../ts/app/Grouper";
+import {Grouper} from "../main/regexunit/Grouper";
 
-declare module "*/resources/grouper/*.json" {
+declare module "*.json" {
     interface GrouperJson {
         Groupers: Array<Grouper>;
     }

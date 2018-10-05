@@ -1,7 +1,7 @@
-import {EnclosureImpl} from "./impl/EnclosureImpl";
+import {Enclosure} from "./Enclosure";
 
 export interface Grouping {
-    readonly enclosure: EnclosureImpl;
+    readonly enclosure: Enclosure;
     readonly separator: string;
 
     enclose(text: string): string;
