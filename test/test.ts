@@ -1,22 +1,23 @@
-import {RegexUnit} from "../src/ts/app/RegexUnit";
-import {OperatorCache} from "../src/ts/cache/OperatorCache";
+import {RegexUnitImpl} from "../src/main/regexunit/impl/RegexUnitImpl";
+import {OperatorCache} from "../src/main/cache/OperatorCache";
+OperatorCache.initialize();
 
-let unit1 = new RegexUnit();
-let unit2 = new RegexUnit();
-let unit21 = new RegexUnit();
-let unit22 = new RegexUnit();
+let unit1 = new RegexUnitImpl();
+let unit2 = new RegexUnitImpl();
+let unit21 = new RegexUnitImpl();
+let unit22 = new RegexUnitImpl();
+unit1.operator=OperatorCache.groupers.get("OR");
+unit1.characters="unit1";
+unit2.operator=OperatorCache.groupers.get("OR");
+unit21.operator=OperatorCache.groupers.get("NOR");
+unit21.characters="unit21";
+unit22.operator=OperatorCache.groupers.get("OR");
+unit22.characters="unit22";
 
-unit1.setOperator(OperatorCache.groupers.get("OR"));
-unit1.setCharacters("unit1");
-unit2.setOperator(OperatorCache.groupers.get("OR"));
-unit21.setOperator(OperatorCache.groupers.get("NOR"));
-unit21.setCharacters("unit21");
-unit22.setOperator(OperatorCache.groupers.get("OR"));
-unit22.setCharacters("unit22");
+unit2.regexUnits=[unit21,unit22];
 
-unit2.setRegexUnits([unit21,unit22]);
-
-let unit = new RegexUnit();
-unit.setRegexUnits([unit1, unit2]);
+let unit = new RegexUnitImpl();
+unit.operator=OperatorCache.groupers.get("OR");
+unit.regexUnits=[unit1, unit2];
 
 console.log(unit.unify());
