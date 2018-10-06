@@ -2,37 +2,22 @@ import * as React from 'react';
 import './App.css';
 import RegexComponent from "./main/component/RegexComponent";
 import {RegexUnitImpl} from "./main/regexunit/impl/RegexUnitImpl";
-import {OperatorCache} from "./main/cache/OperatorCache";
 import {RegexUnit} from "./main/regexunit/RegexUnit";
 
-OperatorCache.initialize();
+export default class App extends React.Component<{ regexUnit: RegexUnitImpl }> {
+    public props: { regexUnit: RegexUnitImpl };
+    public state: { regexUnit: RegexUnitImpl } = {regexUnit: new RegexUnitImpl()};
 
-export default class App extends React.Component {
-    private regexUnit: RegexUnitImpl = new RegexUnitImpl();
-    private regexText: string = this.regexUnit.unify();
+    constructor(props: { regexUnit: RegexUnitImpl }) {
+        super(props);
+        this.state.regexUnit = props.regexUnit;
+    }
 
     onChange(state: RegexUnit) {
-        this.regexUnit = new RegexUnitImpl(state);
-        return this.regexText = this.regexUnit.unify();
+        this.setState({regexUnit: new RegexUnitImpl(state)});
     }
 
     render() {
-
-        let unit1 = new RegexUnitImpl();
-        let unit2 = new RegexUnitImpl();
-        let unit21 = new RegexUnitImpl();
-        let unit22 = new RegexUnitImpl();
-        unit1.operator = OperatorCache.groupers.get("OR");
-        unit1.characters = "unit1";
-        unit2.operator = OperatorCache.groupers.get("OR");
-        unit21.operator = OperatorCache.groupers.get("NOR");
-        unit21.characters = "unit21";
-        unit22.operator = OperatorCache.groupers.get("OR");
-        unit22.characters = "unit22";
-
-        unit2.regexUnits = [unit21, unit22];
-
-        this.regexUnit.regexUnits = [unit1, unit2];
 
         return <div className="App">
             <header className="App-header">
@@ -42,9 +27,9 @@ export default class App extends React.Component {
                 To get started, edit <code>src/App.js</code> and save to reload.
             </p>
             <div>
-                <RegexComponent regexUnit={this.regexUnit} onChange={(state: RegexUnit) => this.onChange(state)}/>
-                <div>{this.regexText}</div>
+                <RegexComponent regexUnit={this.state.regexUnit} onChange={(state: RegexUnit) => this.onChange(state)}/>
             </div>
+            <div>{this.state.regexUnit.unify()}</div>
         </div>;
     }
 }

@@ -1,27 +1,27 @@
 import * as React from 'react';
 import {RegexUnitImpl} from "../regexunit/impl/RegexUnitImpl";
 import {RegexUnit} from "../regexunit/RegexUnit";
+import InputComponent from "./InputComponent";
 
-export default class RegexComponent extends React.Component<{ regexUnit: RegexUnit, onChange }> {
-    public props: { regexUnit: RegexUnit, onChange };
+export default class RegexComponent extends React.Component<{ regexUnit: RegexUnit, onChange: (RegexUnit) => void }> {
+    public props: { regexUnit: RegexUnit, onChange: (RegexUnit) => void };
     public state: RegexUnit;
 
-    constructor(props: { regexUnit: RegexUnit, onChange }) {
+    constructor(props: { regexUnit: RegexUnit, onChange: (RegexUnit) => void }) {
         super(props);
         this.state = new RegexUnitImpl(props.regexUnit);
     }
 
-    onChange(index: number, state: RegexUnit) {
+    onChange(index: number, state: RegexUnit): void {
         let cloneUnit: RegexUnit = RegexUnitImpl.cloneField(this.state);
         cloneUnit.regexUnits[index] = state;
         this.setState(cloneUnit);
         this.props.onChange(cloneUnit);
-        console.log(this.state.regexUnits);
     }
 
-    onTextChange(e) {
+    onTextChange(text: string): void {
         let cloneUnit: RegexUnit = RegexUnitImpl.cloneField(this.state);
-        cloneUnit.characters = e.target.value;
+        cloneUnit.characters = text;
         this.setState(cloneUnit);
         this.props.onChange(cloneUnit);
     }
@@ -31,8 +31,8 @@ export default class RegexComponent extends React.Component<{ regexUnit: RegexUn
             return <RegexComponent key={index} regexUnit={unit}
                                    onChange={(state: RegexUnit) => this.onChange(index, state)}/>
         });
-        const inputComponent = <input type="text" defaultValue={this.state.characters}
-                                      onChange={(e) => this.onTextChange(e)}/>;
+        const inputComponent = <InputComponent text={this.props.regexUnit.characters}
+                                               onChange={(text: string) => this.onTextChange(text)}/>;
 
         return <div className={this.props.regexUnit.operator.kind}>
             {childUnits.length ? childUnits : inputComponent}
