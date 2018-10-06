@@ -5,7 +5,7 @@
 salt
 {
     {T
-        + UnitComponent | RegexUnit
+        + UnitComponent | RegexUnitImpl
         ++ OperatorComponent | logicalOperator
         ++ InputComponent | characters, regexUnits
     }
@@ -15,6 +15,6 @@ salt
 ####Props
 | Name | Status | Type | Refer |
 |:---:|:---:|:---:|:---:|
-| logicalOperator | and | String | RegexUnit.logicalOperator |
-| characters | null string | String | RegexUnit.characters |
-| regexUnits | null array | \[ RegexUnit \] | RegexUnit.regexUnits |
+| logicalOperator | and | String | RegexUnitImpl.logicalOperator |
+| characters | null string | String | RegexUnitImpl.characters |
+| regexUnits | null array | \[ RegexUnitImpl \] | RegexUnitImpl.regexUnits |
